@@ -15,14 +15,12 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/Converter" element={<Converter />} />
-        <Route path="/Comment" element={<Comment />} />
-
-        <Route path="/Fullscreen" element={<Fullscreen />} />
-        <Route path="/Save" element={<Save />} />
-
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Mypage" element={<Mypage />} />
+        <Route path="/converter" element={<Converter />} />
+        <Route path="/comment" element={<Comment />} />
+        <Route path="/fullScreen" element={<Fullscreen />} />
+        <Route path="/save" element={<Save />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/mypage" element={<Mypage />} />
       </Routes>
     </BrowserRouter>
   );
