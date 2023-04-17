@@ -6,21 +6,21 @@ ${reset}
 
   * {
     box-sizing: border-box;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Poppins', sans-serif;
 
     a{
       text-decoration:none;
     }
+
     button{
       cursor: pointer;
     }
-   
-    
+  
+    body{
+      font-family: 'Poppins', sans-serif;
+    }
   }
-  a{
-    text-decoration: none;
-    color:black;
-  }
+
 
 `;
 

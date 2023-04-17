@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import * as S from './Dashboard.style';
 
 export default function Dashboard() {
-  return <DashboardContainer />;
+  return <S.DashboardContainer />;
 }
-
-const DashboardContainer = styled.div`
-  width: 100vw;
-  height: 100&;
-`;
