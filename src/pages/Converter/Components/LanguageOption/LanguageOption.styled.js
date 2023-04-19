@@ -5,7 +5,6 @@ import Select from '@mui/material/Select';
 export const LanguageOption = styled.div`
   ${flexCenter('space-between', 'center')};
   width: 70%;
-  color: #c8c9e9;
   /* border: solid 1px black; */
 `;
 
