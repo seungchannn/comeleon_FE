@@ -6,7 +6,11 @@ ${reset}
 
   * {
     box-sizing: border-box;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Poppins', sans-serif;
+
+    ::selection {
+    background-color: #5E81F4;
+   }
 
     a{
       text-decoration:none;
@@ -14,7 +18,6 @@ ${reset}
     button{
       cursor: pointer;
     }
-   
     
   }
   a{
