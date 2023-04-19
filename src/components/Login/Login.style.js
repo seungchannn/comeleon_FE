@@ -28,17 +28,19 @@ export const LoginContainer = styled.div`
   @media screen and (max-width: 350px) {
     width: 100%;
     height: 100%;
-    border: 1px solid blue;
     border-radius: 20px;
   }
 `;
+export const CloseLoginDiv = styled.div`
+  width: 90%;
+  display: flex;
+  justify-content: end;
+`;
 
-export const CloseLoginBox = styled.button`
-  width: 25px;
-  height: 25px;
-  border: 1px solid #f7f7f7;
-  border-radius: 100px;
-  background-color: white;
+export const CloseLoginBox = styled.img`
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 `;
 
 export const LoginHr = styled.hr`
@@ -50,4 +52,6 @@ export const LoginTitle = styled.p`
   font-weight: 600;
   font-size: 30px;
   line-height: 50px;
+  margin-top: -20px;
+  word-break: break-all;
 `;
