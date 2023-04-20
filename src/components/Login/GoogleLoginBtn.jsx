@@ -63,9 +63,30 @@ const GoogleLoginBtn = () => {
 
   const handleLoginSuccess = async credentialResponse => {
     console.log('로그인성공!', credentialResponse);
+    await postCredential(credentialResponse);
+  };
 
-    // credentialResponse 객체를 그대로 전송
-    const response = await fetch('http://172.30.1.41:3310/users/login', {
+  // credentialResponse 객체를 그대로 전송
+  // const response = await fetch('http://172.30.1.41:3310/users/login', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify(credentialResponse),
+  // });
+
+  // console.log('로그인후 응답', response);
+
+  // if (response.ok) {
+  //   const responseText = await response.text();
+  //   console.log('응답?', responseText);
+  //   console.log('성공');
+  // } else {
+  //   console.log('실패');
+  // }
+
+  const postCredential = async credentialResponse => {
+    const response = await fetch('http://172.30.1.41:3000/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -73,7 +94,11 @@ const GoogleLoginBtn = () => {
       body: JSON.stringify(credentialResponse),
     });
 
+    console.log('로그인후 응답', response);
+
     if (response.ok) {
+      const responseText = await response.text();
+      console.log('응답?', responseText);
       console.log('성공');
     } else {
       console.log('실패');
