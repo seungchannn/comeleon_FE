@@ -55,16 +55,22 @@
 // };
 // export default GoogleLoginBtn;
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 
 const GoogleLoginBtn = () => {
   const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
   const handleLoginSuccess = async credentialResponse => {
-    console.log('로그인성공!', credentialResponse);
+    if (credentialResponse) {
+      postCredential(credentialResponse);
+      console.log('로그인성공!담았다!!', credentialResponse);
+    } else {
+      console.log('로그인실패!!!');
+    }
+  };
 
-    // credentialResponse 객체를 그대로 전송
+  const postCredential = async credentialResponse => {
     const response = await fetch('http://172.30.1.41:3310/users/login', {
       method: 'POST',
       headers: {
@@ -74,9 +80,9 @@ const GoogleLoginBtn = () => {
     });
 
     if (response.ok) {
-      console.log('성공');
+      console.log('자격 증명 전송 성공');
     } else {
-      console.log('실패');
+      console.log('자격 증명 전송 실패');
     }
   };
 
