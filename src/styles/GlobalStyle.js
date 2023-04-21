@@ -10,11 +10,12 @@ ${reset}
 
     ::selection {
     background-color: #5E81F4;
-   }
-
+  }
+s
     a{
       text-decoration:none;
     }
+
     button{
       cursor: pointer;
     }
@@ -24,6 +25,7 @@ ${reset}
     text-decoration: none;
     color:black;
   }
+
 
 `;
 
