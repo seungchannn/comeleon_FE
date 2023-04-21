@@ -14,21 +14,28 @@ const Mypage = () => {
       <S.MypageContainder>
         <S.MypageTopBox>
           <S.MypageTitle>My Page</S.MypageTitle>
-          <img src="./images/logout.png" alt="로그아웃" />
+          <S.MypageLogoutImg src="./images/logout.png" alt="로그아웃" />
         </S.MypageTopBox>
-        <div>
-          {uploadedImage ? (
-            <S.MyProfileImg src={uploadedImage} alt="프로필" />
-          ) : (
-            <S.MyProfileImg src="./images/profile.png" alt="기본프로필" />
-          )}
-          <S.ProfileInputLabel>
-            <span>+</span>
-            <input type="file" onChange={onChangeImage} />
-          </S.ProfileInputLabel>
-          <S.UserName>이름</S.UserName>
-          <S.userCareer>직업</S.userCareer>
-        </div>
+        <S.MypageContentBox>
+          <S.MypageMidBox>
+            <S.ProfileImgBox>
+              {uploadedImage ? (
+                <S.MyProfileImg src={uploadedImage} alt="프로필" />
+              ) : (
+                <S.MyProfileImg src="./images/profile.png" alt="기본프로필" />
+              )}
+              <S.ProfileInputLabel>
+                <span>+</span>
+                <input type="file" onChange={onChangeImage} />
+              </S.ProfileInputLabel>
+            </S.ProfileImgBox>
+            <S.UserName>이름</S.UserName>
+          </S.MypageMidBox>
+
+          <div>
+            <p>history</p>
+          </div>
+        </S.MypageContentBox>
       </S.MypageContainder>
     </S.MypageWhole>
   );
