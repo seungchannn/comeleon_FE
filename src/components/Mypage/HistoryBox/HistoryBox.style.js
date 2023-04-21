@@ -5,8 +5,9 @@ export const HistoryBox = styled.div`
   grid-template-columns: 1fr 3fr;
   justify-items: center;
   align-items: center;
+  margin-top: 10px;
   padding: 15px;
-  width: 400px;
+  width: 100%;
   height: 100px;
   border: 1px solid #e4e4e4;
   border-radius: 15px;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import HistoryBox from './HistoryBox/HistoryBox';
 import * as S from './Mypage.style';
 
 const Mypage = () => {
@@ -11,7 +12,7 @@ const Mypage = () => {
   };
   return (
     <S.MypageWhole>
-      <S.MypageContainder>
+      <S.MypageContainer>
         <S.MypageTopBox>
           <S.MypageTitle>My Page</S.MypageTitle>
           <S.MypageLogoutImg src="./images/logout.png" alt="로그아웃" />
@@ -31,12 +32,12 @@ const Mypage = () => {
             </S.ProfileImgBox>
             <S.UserName>이름</S.UserName>
           </S.MypageMidBox>
-
-          <div>
-            <p>history</p>
-          </div>
+          <S.HistoryContainer>
+            <S.HistoryTitle>History</S.HistoryTitle>
+            <HistoryBox />
+          </S.HistoryContainer>
         </S.MypageContentBox>
-      </S.MypageContainder>
+      </S.MypageContainer>
     </S.MypageWhole>
   );
 };
