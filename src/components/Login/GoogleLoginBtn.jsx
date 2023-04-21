@@ -61,29 +61,22 @@ import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 const GoogleLoginBtn = () => {
   const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
-  const handleLoginSuccess = async credentialResponse => {
-    if (credentialResponse) {
-      postCredential(credentialResponse);
-      console.log('로그인성공!담았다!!', credentialResponse);
-    } else {
-      console.log('로그인실패!!!');
-    }
+  const handleLoginSuccess = credentialResponse => {
+    console.log('로그인성공!', credentialResponse);
+    postCredential(credentialResponse);
   };
 
-  const postCredential = async credentialResponse => {
-    const response = await fetch('http://172.30.1.41:3310/users/login', {
+  const postCredential = credentialResponse => {
+    fetch('http://172.30.1.31:3000/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(credentialResponse),
+      credentials: 'include',
+    }).then(res => {
+      console.log(res);
     });
-
-    if (response.ok) {
-      console.log('자격 증명 전송 성공');
-    } else {
-      console.log('자격 증명 전송 실패');
-    }
   };
 
   return (
