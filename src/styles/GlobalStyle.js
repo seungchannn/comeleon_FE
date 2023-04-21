@@ -8,6 +8,10 @@ ${reset}
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 
+    ::selection {
+    background-color: #5E81F4;
+  }
+s
     a{
       text-decoration:none;
     }
@@ -15,10 +19,11 @@ ${reset}
     button{
       cursor: pointer;
     }
-  
-    body{
-      font-family: 'Poppins', sans-serif;
-    }
+    
+  }
+  a{
+    text-decoration: none;
+    color:black;
   }
 
 
