@@ -11,6 +11,27 @@ export const DashboardContainer = styled.div`
   overflow: hidden;
 `;
 
+export const LoginWrapper = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 80px;
+  right: 80px;
+  cursor: pointer;
+  z-index: 20;
+`;
+
+export const LoginIcon = styled.img`
+  width: 20px;
+  margin-left: 8px;
+  opacity: 30%;
+`;
+
+export const LoginSpan = styled.div`
+  font-size: 15px;
+`;
+
 export const TextOverlay = styled.div`
   display: flex;
   flex-direction: column;

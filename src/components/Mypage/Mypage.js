@@ -1,11 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import * as S from './MyPage.style';
 
 export default function Mypage() {
-  return <MypageContainer />;
+  return <S.MypageContainer />;
 }
-
-const MypageContainer = styled.div`
-  width: 100vw;
-  height: 100&;
-`;

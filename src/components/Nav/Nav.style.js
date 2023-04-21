@@ -9,6 +9,8 @@ export const NavContainer = styled.div`
   width: 300px;
   height: 100vh;
   font-size: 50px;
+  background: white;
+  z-index: 20;
 `;
 
 export const Logo = styled.div`
