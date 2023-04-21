@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Login from './components/Login/Login';
@@ -12,18 +13,30 @@ import Save from './pages/SubMenu/Fullscreen';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/converter" element={<Converter />} />
-        <Route path="/comment" element={<Comment />} />
-        <Route path="/fullScreen" element={<Fullscreen />} />
-        <Route path="/save" element={<Save />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/mypage" element={<Mypage />} />
-      </Routes>
+      <Center>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/converter" element={<Converter />} />
+          <Route path="/comment" element={<Comment />} />
+          <Route path="/fullScreen" element={<Fullscreen />} />
+          <Route path="/save" element={<Save />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/mypage" element={<Mypage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </Center>
     </BrowserRouter>
   );
 };
+
+const Center = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+`;
 
 export default Router;
