@@ -11,6 +11,7 @@ export const HistoryBox = styled.div`
   border: 1px solid #e4e4e4;
   border-radius: 15px;
   background: white;
+  cursor: pointer;
 `;
 
 export const HistroyTextWrapper = styled.div`
@@ -27,7 +28,7 @@ export const HistoryTitle = styled.span`
 `;
 
 export const HistoryDate = styled.span`
-  margin-top: 10px;
+  margin-top: 13px;
   font-size: 10px;
   color: #a2a2c2;
 `;
