@@ -67,7 +67,7 @@ const GoogleLoginBtn = () => {
   };
 
   const postCredential = credentialResponse => {
-    fetch('http://172.30.1.41:3000/users/login', {
+    fetch('http://172.30.1.31:3000/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
