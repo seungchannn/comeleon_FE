@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Mypage() {
-  return <MypageContainer />;
+export default function Login() {
+  return <LoginContainer />;
 }
 
-const MypageContainer = styled.div`
+const LoginContainer = styled.div`
   width: 100vw;
   height: 100&;
 `;
