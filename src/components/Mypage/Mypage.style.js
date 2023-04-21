@@ -120,4 +120,5 @@ export const HistoryTitle = styled.p`
   font-size: 17px;
   font-weight: 600;
   text-align: left;
+  /* border-radius: 10px; */
 `;
