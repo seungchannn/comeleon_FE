@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-export const MypageContainer = styled.div`
-  width: 100vw;
-  height: 100&;
-`;
-import styled from 'styled-components';
-
 export const MypageWhole = styled.div`
   width: 100%;
   height: 100vh; //화면세로맞춤
