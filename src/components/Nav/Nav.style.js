@@ -10,7 +10,7 @@ export const NavContainer = styled.div`
   height: 100vh;
   font-size: 50px;
   background: white;
-  z-index: 20;
+  z-index: 30;
 `;
 
 export const Logo = styled.div`
@@ -18,6 +18,7 @@ export const Logo = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 200px;
+  font-family: 'Poppins', sans-serif;
 `;
 
 export const LogoIcon = styled.img`

@@ -51,6 +51,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const MainText = styled.h2`
+  font-family: 'Poppins', sans-serif;
   white-space: pre-wrap;
   font-size: 50px;
   font-weight: 600;

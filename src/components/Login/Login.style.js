@@ -1,11 +1,14 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const LoginPage = styled.div`
+  position: absolute;
   width: 100%;
   height: 100vh; /* 화면 높이에 맞게 설정 */
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 20;
 `;
 
 export const LoginContainer = styled.div`
@@ -30,6 +33,8 @@ export const LoginContainer = styled.div`
     height: 100%;
     border-radius: 20px;
   }
+
+  z-index: 30;
 `;
 export const CloseLoginDiv = styled.div`
   width: 90%;
@@ -46,6 +51,7 @@ export const CloseLoginBox = styled.img`
 export const LoginHr = styled.hr`
   width: 80%;
   margin-top: -20px;
+  opacity: 50%;
 `;
 
 export const LoginTitle = styled.p`
@@ -54,4 +60,13 @@ export const LoginTitle = styled.p`
   line-height: 50px;
   margin-top: -20px;
   word-break: break-all;
+`;
+
+export const ModalBackground = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+
+  backdrop-filter: blur(10px) brightness(90%);
 `;

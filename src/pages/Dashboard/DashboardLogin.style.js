@@ -10,6 +10,19 @@ export const DashboardContainer = styled.div`
   overflow: hidden;
   gap: 100px;
 `;
+
+export const MypageIcon = styled.img`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 80px;
+  right: 80px;
+  width: 40px;
+  cursor: pointer;
+  z-index: 20;
+`;
+
 export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,8 +30,9 @@ export const TextWrapper = styled.div`
 
 export const MainText = styled.h2`
   white-space: pre-wrap;
+  font-family: 'Poppins', sans-serif;
   font-size: 50px;
-  font-weight: 600;
+  font-weight: 700;
   color: #5e81f4;
 `;
 
