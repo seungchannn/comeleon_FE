@@ -10,6 +10,11 @@ export const DashboardContainer = styled.div`
   overflow: hidden;
   gap: 100px;
 `;
+
+export const MypageIcon = styled.img`
+  width: 20px;
+`;
+
 export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
