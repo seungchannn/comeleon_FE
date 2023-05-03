@@ -56,6 +56,7 @@
 // export default GoogleLoginBtn;
 
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 
 const GoogleLoginBtn = () => {
@@ -64,7 +65,9 @@ const GoogleLoginBtn = () => {
   const handleLoginSuccess = credentialResponse => {
     console.log('로그인성공!', credentialResponse);
     postCredential(credentialResponse);
+    navigate();
   };
+  const navigate = useNavigate('/');
 
   const postCredential = credentialResponse => {
     fetch('http://172.30.1.41:3310/users/login', {
