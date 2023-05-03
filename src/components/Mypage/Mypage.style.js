@@ -1,14 +1,29 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+export const FadeRight = styled(keyframes)`
+  0% {
+    transform: translateX(-400px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+`;
 
 export const MypageWhole = styled.div`
-  width: 100%;
+  position: absolute;
+  width: 400px;
   height: 100vh; //화면세로맞춤
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  background: white;
+  right: 0px;
+  z-index: 30;
+  animation: ${FadeRight} 0.3s;
 `;
 
 export const MypageContainer = styled.div`
-  width: 35%;
+  width: 90%;
   height: 100%;
   display: flex;
   align-items: center;
