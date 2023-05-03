@@ -7,8 +7,8 @@ import Mypage from './components/Mypage/Mypage';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Converter from './pages/Converter/Converter';
 import Comment from './pages/Comment/Comment';
-import Fullscreen from './pages/SubMenu/Fullscreen';
-import Save from './pages/SubMenu/Fullscreen';
+import Fullscreen from './pages/Converter/Components/FullScreen/FullScreen';
+import Save from './pages/Converter/Components/Save/Save';
 
 const Router = () => {
   return (
