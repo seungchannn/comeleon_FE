@@ -26,7 +26,7 @@ export default function FullScreen({ closeModal, inputText, response }) {
         </S.Footer>
         <S.Pre>
           <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
-            {inputText}
+            {response}
           </SyntaxHighlighter>
         </S.Pre>
       </S.Right>

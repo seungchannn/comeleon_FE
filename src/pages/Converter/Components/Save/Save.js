@@ -12,6 +12,7 @@ export default function Save({
   onClose,
 }) {
   const [title, setTitle] = useState('');
+  const ACCESS_TOKEN = localStorage.getItem('access_token');
   const handleSave = () => {
     // 요청 본문 데이터
     const data = {
@@ -27,6 +28,7 @@ export default function Save({
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `${ACCESS_TOKEN}`,
       },
       body: JSON.stringify(data),
     })
@@ -66,7 +68,7 @@ export default function Save({
           <S.Language>{outputLanguage}</S.Language>
           <S.Inner>
             <pre>
-              <code>{inputText}</code>
+              <code>{response}</code>
             </pre>
           </S.Inner>
         </S.OutputText>

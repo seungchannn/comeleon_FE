@@ -23,10 +23,10 @@ export default function Converter() {
   const [outputLanguage, setOutputLanguage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSaveModalOpen, setIsSaveModalOpen] = useState(false);
-
   const handleInputText = e => {
     setInputText(e.target.value);
   };
+  const ACCESS_TOKEN = localStorage.getItem('access_token');
 
   const handleGenerate = e => {
     e.preventDefault();
@@ -37,6 +37,7 @@ export default function Converter() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `${ACCESS_TOKEN}`,
         },
         body: JSON.stringify({ inputText }),
       }
