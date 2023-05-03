@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { prism as codeStyle } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Prism } from 'react-syntax-highlighter';
 import vscDarkPlus from 'react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus';
 import * as S from './Converter.styled';
 import FullScreen from './Components/FullScreen/FullScreen';
@@ -15,6 +13,7 @@ import Checkbox from '@mui/material/Checkbox';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Cancel';
+import Save from './Components/Save/Save';
 
 export default function Converter() {
   const [inputText, setInputText] = useState('');
@@ -23,35 +22,6 @@ export default function Converter() {
   const [inputLanguage, setInputLanguage] = useState('');
   const [outputLanguage, setOutputLanguage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const dummyResponse = ` const handleKeyDown = e => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      handleGenerate(e);
-    }
-  };
-  {!isModalOpen && (
-    <S.ConverterContainer>
-      <S.ConverterLeft>
-        <S.Contents>
-          <S.Title>Convert your codes</S.Title>
-          <S.ContentsHeader>
-            <LanguageOption
-              inputLanguage={inputLanguage}
-              setInputLanguage={setInputLanguage}
-              outputLanguage={outputLanguage}
-              setOutputLanguage={setOutputLanguage}
-            />
-          </S.ContentsHeader>
-          <S.ContentsInput onSubmit={handleGenerate}>
-            <S.Textarea
-              value={inputText}
-              onChange={handleInputText}
-              onKeyDown={handleKeyDown}
-              placeholder="코드를 입력하세요"
-            />
-
-  
-`;
 
   const handleInputText = e => {
     setInputText(e.target.value);
@@ -95,7 +65,7 @@ export default function Converter() {
   };
 
   const handleCopy = e => {
-    navigator.clipboard.writeText(dummyResponse);
+    navigator.clipboard.writeText(inputText);
   };
 
   const handleFullScreenClick = () => {
@@ -161,11 +131,9 @@ export default function Converter() {
                   <div>Copy</div>
                 </S.CodeTitle>
                 <S.Pre>
-                  {/* <S.Code> */}
                   <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
                     {inputText}
                   </SyntaxHighlighter>
-                  {/* </S.Code> */}
                 </S.Pre>
               </S.ContentsOutput>
             </S.Contents>
@@ -184,7 +152,13 @@ export default function Converter() {
           </S.Footer>
         </S.ConverterContainer>
       )}
-      {isModalOpen && <FullScreen closeModal={handleCloseModal} />}
+      {isModalOpen && (
+        <FullScreen
+          closeModal={handleCloseModal}
+          inputText={inputText}
+          response={response}
+        />
+      )}
     </>
   );
 }

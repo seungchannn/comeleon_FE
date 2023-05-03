@@ -7,8 +7,7 @@ import { flexCenter } from '../../styles/mixin';
 
 export const ConverterContainer = styled.div`
   ${flexCenter}
-
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 
   /* border: solid 1px black; */
@@ -48,6 +47,8 @@ export const ContentsInput = styled.form`
   margin-top: 10px;
   height: 70%;
   width: 100%;
+  max-width: 100%;
+  /* overflow-x: auto; */
 `;
 
 export const Textarea = styled.textarea`
@@ -60,6 +61,9 @@ export const Textarea = styled.textarea`
   font-size: 14px;
   line-height: 1.5;
   resize: none;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
   ::-webkit-scrollbar {
     width: 0;
   }
@@ -79,12 +83,13 @@ export const ConverterRight = styled.div`
 `;
 
 export const ContentsOutput = styled.div`
-  margin-top: 10px;
+  margin-top: 80px;
   height: 85%;
   width: 100%;
   /* border: 3px solid red; */
   overflow: hidden;
   border-radius: 10px;
+  /* overflow-x: auto; */
 `;
 export const Pre = styled.div`
   height: 100%;
