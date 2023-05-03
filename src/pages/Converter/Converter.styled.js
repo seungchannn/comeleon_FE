@@ -40,7 +40,7 @@ export const Title = styled.div`
 export const ContentsHeader = styled.div`
   ${flexCenter}
   width: 100%;
-  height: 10%;
+  /* height: 5%; */
   /* border: solid 1px black; */
 `;
 
@@ -86,13 +86,10 @@ export const ContentsOutput = styled.div`
   overflow: hidden;
   border-radius: 10px;
 `;
-export const Pre = styled.pre`
+export const Pre = styled.div`
   height: 100%;
+  padding-left: 10px;
   background-color: #1e1e1e;
-  border: 1px solid black;
-  color: white;
-  line-height: 25px;
-  white-space: pre-wrap;
   overflow: auto;
   ::-webkit-scrollbar {
     width: 0;

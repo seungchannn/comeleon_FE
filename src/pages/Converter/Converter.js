@@ -161,14 +161,11 @@ export default function Converter() {
                   <div>Copy</div>
                 </S.CodeTitle>
                 <S.Pre>
-                  <S.Code>
-                    <SyntaxHighlighter
-                      language="javascript"
-                      style={vscDarkPlus}
-                    >
-                      {inputText}
-                    </SyntaxHighlighter>
-                  </S.Code>
+                  {/* <S.Code> */}
+                  <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
+                    {inputText}
+                  </SyntaxHighlighter>
+                  {/* </S.Code> */}
                 </S.Pre>
               </S.ContentsOutput>
             </S.Contents>
