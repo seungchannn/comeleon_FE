@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import {
+  motion,
+  AnimatePresence,
+} from '../../../node_modules/framer-motion/dist/framer-motion';
 import styled from 'styled-components';
 import Login from '../../components/Login/Login';
 import HistoryBox from '../../components/Mypage/HistoryBox/HistoryBox';

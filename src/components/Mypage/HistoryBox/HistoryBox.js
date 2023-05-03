@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import * as S from './HistoryBox.style';
 
 export default function HistoryBox() {
+  useEffect(() => {
+    fetch('http://192.168.1.127:3310/users/chats', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `${localStorage.getItem('access_token')}`,
+      },
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
+  }, []);
+
   return (
     <S.HistoryBox>
       <S.HistoryIconBoxRed>
