@@ -12,7 +12,7 @@ export default function Dashboard() {
     if (localStorage.getItem('access_token') !== undefined) {
       setIsLogin(true);
     }
-  }, []);
+  }, [isLogin]);
 
   return (
     <S.WholeContainer className="temp">
