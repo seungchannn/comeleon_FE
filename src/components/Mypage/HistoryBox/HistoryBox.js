@@ -3,12 +3,14 @@ import styled from 'styled-components';
 import * as S from './HistoryBox.style';
 
 export default function HistoryBox() {
+  const ACCESS_TOKEN = localStorage.getItem('access_token');
+
   useEffect(() => {
     fetch('http://192.168.1.127:3310/users/chats', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `${localStorage.getItem('access_token')}`,
+        Authorization: `${ACCESS_TOKEN}`,
       },
     })
       .then(response => response.json())

@@ -90,11 +90,9 @@ const GoogleLoginBtn = ({ setLoginModalOn }) => {
       })
       .then(data => {
         console.log('응답', data);
-        localStorage.setItem('credential', credentialResponse.credential);
+        localStorage.setItem('access_token', data.accessToken);
       });
   };
-
-  console.log(localStorage.getItem('credential'));
 
   return (
     <GoogleOAuthProvider clientId={clientId}>
