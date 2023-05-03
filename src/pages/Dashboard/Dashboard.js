@@ -8,14 +8,11 @@ export default function Dashboard() {
   const [isLogin, setIsLogin] = useState(false);
   const [toggle, setToggle] = useState(true);
 
-  useEffect(() => {
-    if (localStorage.getItem('access_token') === null) {
-      setIsLogin(false);
-    }
-    setIsLogin(true);
-  }, []);
+  const ACCESS_TOKEN = localStorage.getItem('access_token');
 
-  console.log(localStorage.getItem('access_token'));
+  useEffect(() => {
+    ACCESS_TOKEN ? setIsLogin(true) : setIsLogin(false);
+  }, []);
 
   return (
     <S.WholeContainer className="temp">
