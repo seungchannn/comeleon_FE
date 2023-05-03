@@ -34,7 +34,7 @@ const Login = ({ setLoginModalOn, loginModalOn }) => {
         </S.CloseLoginDiv>
         <S.LoginTitle>Welcome to floor8</S.LoginTitle>
         <S.LoginHr />
-        <GoogleLoginBtn />
+        <GoogleLoginBtn setLoginModalOn={setLoginModalOn} />
       </S.LoginContainer>
       <S.ModalBackground
         as={motion.div}
