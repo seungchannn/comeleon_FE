@@ -67,7 +67,6 @@ const GoogleLoginBtn = ({ setLoginModalOn }) => {
     console.log('로그인성공!', credentialResponse);
     postCredential(credentialResponse);
     setLoginModalOn(false); // 모달 닫기
-    navigate('/');
   };
 
   const token = localStorage.getItem('token');
@@ -91,6 +90,7 @@ const GoogleLoginBtn = ({ setLoginModalOn }) => {
       .then(data => {
         console.log('응답', data);
         localStorage.setItem('access_token', data.accessToken);
+        window.location.replace('/');
       });
   };
 
