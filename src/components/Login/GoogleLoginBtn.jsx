@@ -65,7 +65,7 @@ const GoogleLoginBtn = () => {
 
   const handleLoginSuccess = credentialResponse => {
     console.log('로그인성공!', credentialResponse);
-    postCredential(credentialResponse);
+    postCredential(credentialResponse, token);
     navigate('/');
   };
 
