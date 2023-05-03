@@ -78,7 +78,7 @@ const GoogleLoginBtn = () => {
       body: JSON.stringify(credentialResponse),
       credentials: 'include',
     }).then(res => {
-      console.log(res);
+      console.log('결과', res);
     });
   };
 
