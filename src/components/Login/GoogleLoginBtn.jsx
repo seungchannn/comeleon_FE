@@ -65,12 +65,13 @@ const GoogleLoginBtn = ({ setLoginModalOn }) => {
 
   const handleLoginSuccess = credentialResponse => {
     console.log('로그인성공!', credentialResponse);
-    postCredential(credentialResponse, token);
+    postCredential(credentialResponse);
     setLoginModalOn(false); // 모달 닫기
     navigate('/');
   };
 
   const token = localStorage.getItem('token');
+  // const saveToken = token => localStorage.setItem('token', token);
 
   const postCredential = credentialResponse => {
     fetch('http://192.168.1.127:3310/users/login', {
@@ -84,8 +85,11 @@ const GoogleLoginBtn = ({ setLoginModalOn }) => {
     }).then(res => {
       console.log('결과', res);
       console.log('토큰', token);
+      localStorage.setItem('credential', credentialResponse.credential);
     });
   };
+
+  console.log(localStorage.getItem('credential'));
 
   return (
     <GoogleOAuthProvider clientId={clientId}>
