@@ -22,6 +22,7 @@ export default function Converter() {
   const [inputLanguage, setInputLanguage] = useState('');
   const [outputLanguage, setOutputLanguage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSaveModalOpen, setIsSaveModalOpen] = useState(false);
 
   const handleInputText = e => {
     setInputText(e.target.value);
@@ -31,7 +32,7 @@ export default function Converter() {
     e.preventDefault();
     const isComment = withComments ? 'true' : 'false';
     fetch(
-      `http://172.30.1.36:3310/openai?isComment=${isComment}&ol=${inputLanguage}&cl=${outputLanguage}`,
+      `http://192.168.1.127:3310/openai?isComment=${isComment}&ol=${inputLanguage}&cl=${outputLanguage}`,
       {
         method: 'POST',
         headers: {
@@ -77,9 +78,17 @@ export default function Converter() {
     setIsModalOpen(false);
   };
 
+  const handleSaveClick = () => {
+    setIsSaveModalOpen(true);
+  };
+
+  const handleSaveClose = () => {
+    setIsSaveModalOpen(false);
+  };
+
   return (
     <>
-      {!isModalOpen && (
+      {!isModalOpen && !isSaveModalOpen && (
         <S.ConverterContainer>
           <S.ConverterLeft>
             <S.Contents>
@@ -132,7 +141,7 @@ export default function Converter() {
                 </S.CodeTitle>
                 <S.Pre>
                   <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
-                    {inputText}
+                    {response}
                   </SyntaxHighlighter>
                 </S.Pre>
               </S.ContentsOutput>
@@ -143,7 +152,7 @@ export default function Converter() {
               <FullscreenIcon />
             </S.FooterButton>
 
-            <S.FooterButton>
+            <S.FooterButton onClick={handleSaveClick}>
               <SaveIcon />
             </S.FooterButton>
             <S.FooterButton>
@@ -157,6 +166,15 @@ export default function Converter() {
           closeModal={handleCloseModal}
           inputText={inputText}
           response={response}
+        />
+      )}
+      {isSaveModalOpen && (
+        <Save
+          inputLanguage={inputLanguage}
+          outputLanguage={outputLanguage}
+          inputText={inputText}
+          response={response}
+          onClose={handleSaveClose}
         />
       )}
     </>

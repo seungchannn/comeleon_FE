@@ -24,7 +24,7 @@ export const TitleInput = styled.input`
   width: 80%;
   height: 50px;
   font-size: 20px;
-  margin-top: 30px;
+  margin-top: 10px;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #c0c0c0;
@@ -46,8 +46,8 @@ export const InputText = styled.div`
   flex-direction : column;
   border: solid 1px #c0c0c0;
   border-radius: 10px;
-  width: 40%;
-  height: 80%;
+  width: 45%;
+  height: 90%;
   background-color: white;
 `;
 
@@ -56,16 +56,31 @@ export const OutputText = styled.div`
   flex-direction : column;
   border: solid 1px #c0c0c0;
   border-radius: 10px;
-  width: 40%;
-  height: 80%;
+  width: 45%;
+  height: 90%;
   background-color: white;
 `;
 
 export const Language = styled.div`
   border: none;
+  margin-top: 10px;
   border-bottom: 1px solid #c0c0c0;
-  width: 80%;
+  ${flexCenter('flex-start', 'center')}
+  width: 90%;
   height: 50px;
+  overflow: auto;
+`;
+
+export const Inner = styled.div`
+  /* border: 1px solid black; */
+  margin-top: 20px;
+  width: 90%;
+  height: 85%;
+  overflow: auto;
+  line-height: 1.2;
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 `;
 
 export const Footer = styled.div`
