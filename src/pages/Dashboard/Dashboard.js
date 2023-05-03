@@ -9,15 +9,17 @@ export default function Dashboard() {
   const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
-    if (localStorage.getItem('access_token') !== undefined) {
-      setIsLogin(true);
+    if (localStorage.getItem('access_token') === null) {
+      setIsLogin(false);
     }
-    setIsLogin(false);
-  }, [isLogin]);
+    setIsLogin(true);
+  }, []);
+
+  console.log(localStorage.getItem('access_token'));
 
   return (
     <S.WholeContainer className="temp">
-      {isLogin ? (
+      {localStorage.getItem('access_token') !== null ? (
         <DashboardLogIn />
       ) : (
         <DashboardLogOut setIsLogin={setIsLogin} />
