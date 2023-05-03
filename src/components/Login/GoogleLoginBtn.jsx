@@ -61,7 +61,7 @@ import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 
 const GoogleLoginBtn = ({ setLoginModalOn }) => {
   const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
-  const navigate = useNavigate('/');
+  const navigate = useNavigate();
 
   const handleLoginSuccess = credentialResponse => {
     console.log('로그인성공!', credentialResponse);
@@ -78,15 +78,20 @@ const GoogleLoginBtn = ({ setLoginModalOn }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: token,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(credentialResponse),
       credentials: 'include',
-    }).then(res => {
-      console.log('결과', res);
-      console.log('토큰', token);
-      localStorage.setItem('credential', credentialResponse.credential);
-    });
+    })
+      .then(res => {
+        console.log('결과', res);
+        console.log('토큰', token);
+        return res.json();
+      })
+      .then(data => {
+        console.log('응답', data);
+        localStorage.setItem('credential', credentialResponse.credential);
+      });
   };
 
   console.log(localStorage.getItem('credential'));
