@@ -31,7 +31,7 @@ export default function Converter() {
     e.preventDefault();
     const isComment = withComments ? 'true' : 'false';
     fetch(
-      `http://172.30.1.36:3310/openai?isComment=${isComment}&ol=${inputLanguage}&cl=${outputLanguage}`,
+      `http://192.168.1.127:3310/openai?isComment=${isComment}&ol=${inputLanguage}&cl=${outputLanguage}`,
       {
         method: 'POST',
         headers: {
@@ -132,7 +132,7 @@ export default function Converter() {
                 </S.CodeTitle>
                 <S.Pre>
                   <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
-                    {inputText}
+                    {response}
                   </SyntaxHighlighter>
                 </S.Pre>
               </S.ContentsOutput>
