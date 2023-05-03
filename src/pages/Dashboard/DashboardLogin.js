@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useAnimate, stagger, motion } from 'framer-motion';
+import {
+  useAnimate,
+  stagger,
+  motion,
+} from '../../../node_modules/framer-motion/dist/framer-motion';
 import styled from 'styled-components';
 import HistoryBox from '../../components/Mypage/HistoryBox/HistoryBox';
 import Mypage from '../../components/Mypage/Mypage';

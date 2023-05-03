@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion } from '../../../node_modules/framer-motion/dist/framer-motion';
 
 export const LoginPage = styled.div`
   position: absolute;

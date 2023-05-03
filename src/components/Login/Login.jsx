@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '../../../node_modules/framer-motion/dist/framer-motion';
 import GoogleLoginBtn from './GoogleLoginBtn';
 import * as S from './Login.style';
 
