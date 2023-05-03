@@ -1,18 +1,22 @@
 import styled from 'styled-components';
 
 export const DashboardContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  padding: 150px;
+  padding: 150px 150px;
   background: #f5f5fb;
   overflow: hidden;
   gap: 100px;
 `;
 
 export const MypageIcon = styled.img`
-  width: 20px;
+  position: absolute;
+  width: 30px;
+  right: 100px;
+  cursor: pointer;
 `;
 
 export const TextWrapper = styled.div`

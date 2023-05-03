@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import HistoryBox from './HistoryBox/HistoryBox';
 import * as S from './Mypage.style';
 
-const Mypage = () => {
+const Mypage = ({ setMypageOn }) => {
   const [uploadedImage, setUploadedImage] = useState(null);
 
   const onChangeImage = e => {
@@ -11,11 +11,15 @@ const Mypage = () => {
     setUploadedImage(imageUrl);
   };
   return (
-    <S.MypageWhole>
+    <S.MypageWhole className="temp">
       <S.MypageContainer>
         <S.MypageTopBox>
           <S.MypageTitle>My Page</S.MypageTitle>
-          <S.MypageLogoutImg src="./images/logout.png" alt="로그아웃" />
+          <S.MypageLogoutImg
+            src="./images/logout.png"
+            alt="로그아웃"
+            onClick={() => setMypageOn(false)}
+          />
         </S.MypageTopBox>
         <S.MypageContentBox>
           <S.MypageMidBox>
