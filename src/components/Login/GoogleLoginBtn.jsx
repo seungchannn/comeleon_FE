@@ -86,8 +86,12 @@ const GoogleLoginBtn = () => {
     <GoogleOAuthProvider clientId={clientId}>
       <GoogleLogin
         type="standard"
-        onSuccess={handleLoginSuccess}
-        theme="filled_blue"
+        onSuccess={credentialResponse => {
+          console.log('로그인성공!', credentialResponse);
+          // const decodeding = jwt_decode(credentialResponse.credential);
+          // console.log(decodeding);
+        }}
+        theme="filled_blue" //파란색 하고싶은경우 적용하기
         shape="circle"
         text="signin_with"
         size="medium"
@@ -101,3 +105,19 @@ const GoogleLoginBtn = () => {
 };
 
 export default GoogleLoginBtn;
+{
+  /* <GoogleOAuthProvider clientId={clientId}>
+<GoogleLogin
+  type="standard"
+  onSuccess={handleLoginSuccess}
+  theme="filled_blue"
+  shape="circle"
+  text="signin_with"
+  size="medium"
+  cancel_on_tap_outside="true"
+  onFailure={err => {
+    console.log('로그인실패', err);
+  }}
+/>
+</GoogleOAuthProvider> */
+}
