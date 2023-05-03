@@ -61,13 +61,13 @@ import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 
 const GoogleLoginBtn = () => {
   const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+  const navigate = useNavigate('/');
 
   const handleLoginSuccess = credentialResponse => {
     console.log('로그인성공!', credentialResponse);
     postCredential(credentialResponse);
-    navigate();
+    navigate('/');
   };
-  const navigate = useNavigate('/');
 
   const token = localStorage.getItem('token');
 
@@ -82,6 +82,7 @@ const GoogleLoginBtn = () => {
       credentials: 'include',
     }).then(res => {
       console.log('결과', res);
+      console.log('토큰', token);
     });
   };
 
